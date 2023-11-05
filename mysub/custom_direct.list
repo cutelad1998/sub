@@ -1,0 +1,13 @@
+# 自定义直连地址
+# 参考：https://en.wikipedia.org/wiki/Reserved_IP_addresses
+
+# 自定义直连地址
+DOMAIN-SUFFIX,pcjiang.me
+DOMAIN-SUFFIX,jiangpengcheng.top
+DOMAIN,pcjiang1998.github.io
+DOMAIN-SUFFIX,edu.cn
+DOMAIN-SUFFIX,alipay.com
+DOMAIN-KEYWORD,pcjiang
+DOMAIN-KEYWORD,jiangpengcheng
+DOMAIN-KEYWORD,pcjiang
+DOMAIN-SUFFIX,zotero.org

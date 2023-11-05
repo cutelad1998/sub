@@ -1,0 +1,25 @@
+# 自定义代理地址
+# 参考：https://en.wikipedia.org/wiki/Reserved_IP_addresses
+
+# 自定义代理地址
+DOMAIN-KEYWORD,sakura-cat
+DOMAIN-KEYWORD,ikuuu
+DOMAIN-KEYWORD,paofu
+DOMAIN-SUFFIX,deepl.com
+DOMAIN-SUFFIX,overleaf.com
+DOMAIN-SUFFIX,chatpdf.com
+DOMAIN-SUFFIX,azure.com
+DOMAIN-SUFFIX,pymoo.org
+DOMAIN-SUFFIX,jetbrains.com
+DOMAIN-SUFFIX,nvidia.com
+DOMAIN-SUFFIX,pytorchlightning.ai
+DOMAIN-SUFFIX,grammarly.com
+DOMAIN-SUFFIX,openreview.net
+DOMAIN-SUFFIX,raw.githubusercontent.com
+DOMAIN-SUFFIX,thecvf.com
+DOMAIN-SUFFIX,github.com
+DOMAIN-SUFFIX,paperswithcode.com
+DOMAIN-SUFFIX,arxiv.org
+DOMAIN-SUFFIX,coursera.org
+DOMAIN-SUFFIX,deeplearning.ai
+DOMAIN-SUFFIX,aaai.org
