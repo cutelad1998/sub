@@ -1,0 +1,19 @@
+# New Bing
+
+DOMAIN-SUFFIX,bing.com
+DOMAIN,www.bing.com
+DOMAIN,r.bing.com
+DOMAIN,th.bing.com
+DOMAIN,www2.bing.com
+DOMAIN,business.bing.com
+DOMAIN-SUFFIX,bing.net
+DOMAIN,tse1.mm.bing.net
+DOMAIN-SUFFIX,bingapis.com
+DOMAIN,services.bingapis.com
+DOMAIN-KEYWORD,azure
+DOMAIN-SUFFIX,azureedge.net
+DOMAIN-SUFFIX,microsoft.com
+DOMAIN-SUFFIX,msftauth.net
+DOMAIN-SUFFIX,nelreports.net
+DOMAIN-SUFFIX,staticj.top
+DOMAIN-SUFFIX,live.com
