@@ -1,7 +1,8 @@
 [【中文】](./README_zh.md)
 
-ACL4SSR: 从ACL4SSR仓库复制
-mysub: 自定义规则 (用于clash/surfboard/shadowrocket)
+文件夹：
+- ACL4SSR: 从ACL4SSR仓库复制
+- mysub: 自定义规则 (用于clash/surfboard/shadowrocket)
 
 用法: 
 - clash/surfboard...: 使用subconvert，设置config=xxx.ini
