@@ -1,7 +1,8 @@
 [【中文】](./README_zh.md)
 
-ACL4SSR: Mirror of ACL4SSR
-mysub: Define some custom rules (for clash/surfboard/shadowrocket)
+Folders:
+- ACL4SSR: Mirror of ACL4SSR
+- mysub: Define some custom rules (for clash/surfboard/shadowrocket)
 
 usage: 
 - For clash/surfboard...: use a subconvert and set the config=xxx.ini
