@@ -1,5 +1,7 @@
 # claude.ai (anthropic)
 
+# Add more sites
+
 DOMAIN-KEYWORD,claude
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-KEYWORD,usefathom
@@ -15,3 +17,7 @@ DOMAIN-SUFFIX,stripe.network
 DOMAIN-SUFFIX,stripe.com
 DOMAIN-KEYWORD,intercom
 DOMAIN-SUFFIX,intercom.io
+
+DOMAIN-SUFFIX,coze.com
+DOMAIN-SUFFIX,groq.com
+DOMAIN-SUFFIX,gemini.google.com
