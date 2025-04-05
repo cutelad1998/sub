@@ -4,6 +4,9 @@
 
 DOMAIN-KEYWORD,claude
 DOMAIN-SUFFIX,claude.ai
+DOMAIN-KEYWORD,grok
+DOMAIN-SUFFIX,grok.com
+DOMAIN-SUFFIX,x.com
 DOMAIN-KEYWORD,usefathom
 DOMAIN-SUFFIX,usefathom.com
 DOMAIN-KEYWORD,hsforms
@@ -17,7 +20,6 @@ DOMAIN-SUFFIX,stripe.network
 DOMAIN-SUFFIX,stripe.com
 DOMAIN-KEYWORD,intercom
 DOMAIN-SUFFIX,intercom.io
-
 DOMAIN-SUFFIX,coze.com
 DOMAIN-SUFFIX,groq.com
 DOMAIN-SUFFIX,gemini.google.com
