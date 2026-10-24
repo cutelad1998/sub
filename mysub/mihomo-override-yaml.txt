@@ -1,0 +1,1227 @@
+# https://mihomo.party/docs/guide/override/yaml
+
+proxy-groups:
+  - name: （S手动切换，U自动选最小延迟，只建议手动切换最上面三个）
+    type: select
+    proxies:
+      - DIRECT
+      - REJECT
+
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - ♻️ 自动选择单倍节点
+      - 🚀 手动切换
+      - ⚡ 多倍节点
+      - 🆓 免费节点
+      - 😀 自建节点
+      - 🇭🇰 香港节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 新加坡节点
+      - 🇮🇳 印度节点
+      - 🇬🇧 英国节点
+      - 🇦🇷 阿根廷节点
+      - 🇹🇷 土耳其节点
+      - 🇫🇷 法国节点
+      - 🇩🇪 德国节点
+      - 🇨🇦 加拿大节点
+      - 🇵🇭 菲律宾节点
+      - 🇦🇺 澳大利亚节点
+      - 🇲🇴 澳门节点
+      - 🇰🇷 韩国节点
+      - 🇺🇦 乌克兰节点
+      - 🇻🇳 越南节点
+      - 🇷🇺 俄罗斯节点
+      - 🇹🇭 泰国节点
+      - 🇲🇾 马来西亚节点
+      - 🇳🇴 挪威节点
+      - 🇮🇩 印度尼西亚节点
+      - 🇳🇬 尼日利亚节点
+      - 🇧🇷 巴西节点
+      - DIRECT
+
+  - name: 😀 自建节点
+    type: select
+    include-all: true
+    filter: (?i)自建|搭建
+    proxies:
+      - REJECT
+
+  - name: ⚡ 多倍节点
+    type: select
+    include-all: true
+    filter: (?i)倍|消耗
+    exclude-filter: (?i)单|免费|免
+    proxies:
+      - REJECT
+
+  - name: 🚀 手动切换
+    include-all: true
+    type: select
+
+  - name: （从这个开始不建议切换，除非明白原理）
+    type: select
+    proxies:
+      - DIRECT
+      - REJECT
+
+  - name: 💬 OpenAi
+    type: select
+    proxies:
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇸🇬 新加坡节点
+      - 🇮🇳 印度节点
+      - 🇬🇧 英国节点
+      - 🇹🇷 土耳其节点
+      - 🇫🇷 法国节点
+      - 🇩🇪 德国节点
+      - 🇨🇦 加拿大节点
+      - 🇵🇭 菲律宾节点
+      - 🇦🇺 澳大利亚节点
+      - 🚀 节点选择
+      - 😀 自建节点
+      - ⚡ 多倍节点
+      - 🚀 手动切换
+      - ♻️ 自动选择单倍节点
+      - 🆓 免费节点
+      - 🇦🇷 阿根廷节点
+      - 🇰🇷 韩国节点
+      - 🇺🇦 乌克兰节点
+      - 🇻🇳 越南节点
+      - 🇹🇭 泰国节点
+      - 🇲🇾 马来西亚节点
+      - 🇳🇴 挪威节点
+      - 🇮🇩 印度尼西亚节点
+      - 🇳🇬 尼日利亚节点
+      - 🇧🇷 巴西节点
+
+  - name: 💬 Claude
+    type: select
+    proxies:
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇸🇬 新加坡节点
+      - 🇮🇳 印度节点
+      - 🇬🇧 英国节点
+      - 🇹🇷 土耳其节点
+      - 🇫🇷 法国节点
+      - 🇩🇪 德国节点
+      - 🇨🇦 加拿大节点
+      - 🇵🇭 菲律宾节点
+      - 🇦🇺 澳大利亚节点
+      - 🚀 节点选择
+      - 😀 自建节点
+      - ⚡ 多倍节点
+      - 🚀 手动切换
+      - ♻️ 自动选择单倍节点
+      - 🆓 免费节点
+      - 🇦🇷 阿根廷节点
+      - 🇰🇷 韩国节点
+      - 🇺🇦 乌克兰节点
+      - 🇻🇳 越南节点
+      - 🇹🇭 泰国节点
+      - 🇲🇾 马来西亚节点
+      - 🇳🇴 挪威节点
+      - 🇮🇩 印度尼西亚节点
+      - 🇳🇬 尼日利亚节点
+      - 🇧🇷 巴西节点
+
+  - name: 💬 Gemini
+    type: select
+    proxies:
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇸🇬 新加坡节点
+      - 🇮🇳 印度节点
+      - 🇬🇧 英国节点
+      - 🇹🇷 土耳其节点
+      - 🇫🇷 法国节点
+      - 🇩🇪 德国节点
+      - 🇨🇦 加拿大节点
+      - 🇵🇭 菲律宾节点
+      - 🇦🇺 澳大利亚节点
+      - 🚀 节点选择
+      - 😀 自建节点
+      - ⚡ 多倍节点
+      - 🚀 手动切换
+      - ♻️ 自动选择单倍节点
+      - 🆓 免费节点
+      - 🇦🇷 阿根廷节点
+      - 🇰🇷 韩国节点
+      - 🇺🇦 乌克兰节点
+      - 🇻🇳 越南节点
+      - 🇹🇭 泰国节点
+      - 🇲🇾 马来西亚节点
+      - 🇳🇴 挪威节点
+      - 🇮🇩 印度尼西亚节点
+      - 🇳🇬 尼日利亚节点
+      - 🇧🇷 巴西节点
+
+  - name: 💬 Grok（X）
+    type: select
+    proxies:
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇸🇬 新加坡节点
+      - 🇮🇳 印度节点
+      - 🇬🇧 英国节点
+      - 🇹🇷 土耳其节点
+      - 🇫🇷 法国节点
+      - 🇩🇪 德国节点
+      - 🇨🇦 加拿大节点
+      - 🇵🇭 菲律宾节点
+      - 🇦🇺 澳大利亚节点
+      - 🚀 节点选择
+      - 😀 自建节点
+      - ⚡ 多倍节点
+      - 🚀 手动切换
+      - ♻️ 自动选择单倍节点
+      - 🆓 免费节点
+      - 🇦🇷 阿根廷节点
+      - 🇰🇷 韩国节点
+      - 🇺🇦 乌克兰节点
+      - 🇻🇳 越南节点
+      - 🇹🇭 泰国节点
+      - 🇲🇾 马来西亚节点
+      - 🇳🇴 挪威节点
+      - 🇮🇩 印度尼西亚节点
+      - 🇳🇬 尼日利亚节点
+      - 🇧🇷 巴西节点
+
+  - name: 💬 国外AI工具
+    type: select
+    proxies:
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇸🇬 新加坡节点
+      - 🇮🇳 印度节点
+      - 🇬🇧 英国节点
+      - 🇹🇷 土耳其节点
+      - 🇫🇷 法国节点
+      - 🇩🇪 德国节点
+      - 🇨🇦 加拿大节点
+      - 🇵🇭 菲律宾节点
+      - 🇦🇺 澳大利亚节点
+      - 🚀 节点选择
+      - 😀 自建节点
+      - ⚡ 多倍节点
+      - 🚀 手动切换
+      - ♻️ 自动选择单倍节点
+      - 🆓 免费节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇦🇷 阿根廷节点
+      - 🇲🇴 澳门节点
+      - 🇰🇷 韩国节点
+      - 🇺🇦 乌克兰节点
+      - 🇻🇳 越南节点
+      - 🇷🇺 俄罗斯节点
+      - 🇹🇭 泰国节点
+      - 🇲🇾 马来西亚节点
+      - 🇳🇴 挪威节点
+      - 🇮🇩 印度尼西亚节点
+      - 🇳🇬 尼日利亚节点
+      - 🇧🇷 巴西节点
+      - DIRECT
+
+  - name: Ⓜ️ 微软Bing
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 😀 自建节点
+      - ⚡ 多倍节点
+      - 🚀 手动切换
+      - ♻️ 自动选择单倍节点
+      - 🆓 免费节点
+      - 🇭🇰 香港节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 新加坡节点
+      - 🇮🇳 印度节点
+      - 🇬🇧 英国节点
+      - 🇦🇷 阿根廷节点
+      - 🇹🇷 土耳其节点
+      - 🇫🇷 法国节点
+      - 🇩🇪 德国节点
+      - 🇨🇦 加拿大节点
+      - 🇵🇭 菲律宾节点
+      - 🇦🇺 澳大利亚节点
+      - 🇲🇴 澳门节点
+      - 🇰🇷 韩国节点
+      - 🇺🇦 乌克兰节点
+      - 🇻🇳 越南节点
+      - 🇷🇺 俄罗斯节点
+      - 🇹🇭 泰国节点
+      - 🇲🇾 马来西亚节点
+      - 🇳🇴 挪威节点
+      - 🇮🇩 印度尼西亚节点
+      - 🇳🇬 尼日利亚节点
+      - 🇧🇷 巴西节点
+
+  - name: Ⓜ️ 微软云盘
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 😀 自建节点
+      - ⚡ 多倍节点
+      - 🚀 手动切换
+      - ♻️ 自动选择单倍节点
+      - 🆓 免费节点
+      - 🇭🇰 香港节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 新加坡节点
+      - 🇮🇳 印度节点
+      - 🇬🇧 英国节点
+      - 🇦🇷 阿根廷节点
+      - 🇹🇷 土耳其节点
+      - 🇫🇷 法国节点
+      - 🇩🇪 德国节点
+      - 🇨🇦 加拿大节点
+      - 🇵🇭 菲律宾节点
+      - 🇦🇺 澳大利亚节点
+      - 🇲🇴 澳门节点
+      - 🇰🇷 韩国节点
+      - 🇺🇦 乌克兰节点
+      - 🇻🇳 越南节点
+      - 🇷🇺 俄罗斯节点
+      - 🇹🇭 泰国节点
+      - 🇲🇾 马来西亚节点
+      - 🇳🇴 挪威节点
+      - 🇮🇩 印度尼西亚节点
+      - 🇳🇬 尼日利亚节点
+      - 🇧🇷 巴西节点
+
+  - name: Ⓜ️ 微软服务
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 😀 自建节点
+      - ⚡ 多倍节点
+      - 🚀 手动切换
+      - ♻️ 自动选择单倍节点
+      - 🆓 免费节点
+      - 🇭🇰 香港节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 新加坡节点
+      - 🇮🇳 印度节点
+      - 🇬🇧 英国节点
+      - 🇦🇷 阿根廷节点
+      - 🇹🇷 土耳其节点
+      - 🇫🇷 法国节点
+      - 🇩🇪 德国节点
+      - 🇨🇦 加拿大节点
+      - 🇵🇭 菲律宾节点
+      - 🇦🇺 澳大利亚节点
+      - 🇲🇴 澳门节点
+      - 🇰🇷 韩国节点
+      - 🇺🇦 乌克兰节点
+      - 🇻🇳 越南节点
+      - 🇷🇺 俄罗斯节点
+      - 🇹🇭 泰国节点
+      - 🇲🇾 马来西亚节点
+      - 🇳🇴 挪威节点
+      - 🇮🇩 印度尼西亚节点
+      - 🇳🇬 尼日利亚节点
+      - 🇧🇷 巴西节点
+
+  - name: 🍎 苹果服务
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 😀 自建节点
+      - ⚡ 多倍节点
+      - 🚀 手动切换
+      - ♻️ 自动选择单倍节点
+      - 🆓 免费节点
+      - 🇭🇰 香港节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 新加坡节点
+      - 🇮🇳 印度节点
+      - 🇬🇧 英国节点
+      - 🇦🇷 阿根廷节点
+      - 🇹🇷 土耳其节点
+      - 🇫🇷 法国节点
+      - 🇩🇪 德国节点
+      - 🇨🇦 加拿大节点
+      - 🇵🇭 菲律宾节点
+      - 🇦🇺 澳大利亚节点
+      - 🇲🇴 澳门节点
+      - 🇰🇷 韩国节点
+      - 🇺🇦 乌克兰节点
+      - 🇻🇳 越南节点
+      - 🇷🇺 俄罗斯节点
+      - 🇹🇭 泰国节点
+      - 🇲🇾 马来西亚节点
+      - 🇳🇴 挪威节点
+      - 🇮🇩 印度尼西亚节点
+      - 🇳🇬 尼日利亚节点
+      - 🇧🇷 巴西节点
+
+  - name: 💬 Surrey
+    type: select
+    proxies:
+      - 🇺🇲 美国节点
+      - 🇬🇧 英国节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇮🇳 印度节点
+      - 🇹🇷 土耳其节点
+      - 🇫🇷 法国节点
+      - 🇩🇪 德国节点
+      - 🇨🇦 加拿大节点
+      - 🇵🇭 菲律宾节点
+      - 🇦🇺 澳大利亚节点
+      - 🇺🇦 乌克兰节点
+      - 🇳🇴 挪威节点
+      - 🇧🇷 巴西节点
+      - 🚀 节点选择
+      - 🚀 手动切换
+      - ⚡ 多倍节点
+      - 🆓 免费节点
+      - 😀 自建节点
+      - DIRECT
+
+  - name: （从这个开始为自动选择低延迟或无需切换）
+    type: select
+    proxies:
+      - DIRECT
+      - REJECT
+
+  - name: ♻️ 自动选择单倍节点
+    type: url-test
+    interval: 300
+    proxies:
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 新加坡节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🇬🇧 英国节点
+      - 🇫🇷 法国节点
+      - 🇩🇪 德国节点
+      - 🇹🇷 土耳其节点
+      - 🇦🇷 阿根廷节点
+      - 🇵🇭 菲律宾节点
+      - 🇷🇺 俄罗斯节点
+      - 🇹🇭 泰国节点
+      - 🇲🇾 马来西亚节点
+      - 🇳🇬 尼日利亚节点
+      - 🇧🇷 巴西节点
+      - 🇮🇳 印度节点
+      - 🇨🇦 加拿大节点
+      - 🇦🇺 澳大利亚节点
+      - 🆓 免费节点
+      - 😀 自建节点
+
+  - name: 🆓 免费节点
+    include-all: true
+    filter: (?i)免费|免
+    type: url-test
+    interval: 300
+    proxies:
+      - REJECT
+
+  - name: 🇭🇰 香港节点
+    include-all: true
+    filter: (?i)港|HK|Hong Kong|🇭🇰|HongKong
+    exclude-filter: (?i)倍|消耗
+    type: url-test
+    interval: 300
+    proxies:
+      - REJECT
+
+  - name: 🇯🇵 日本节点
+    include-all: true
+    filter: (?i)🇯🇵|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan
+    exclude-filter: (?i)倍|消耗
+    type: url-test
+    interval: 300
+    proxies:
+      - REJECT
+
+  - name: 🇺🇲 美国节点
+    include-all: true
+    filter: (?i)🇺🇲|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States
+    exclude-filter: (?i)倍|消耗
+    type: url-test
+    interval: 300
+    proxies:
+      - REJECT
+
+  - name: 🇨🇳 台湾节点
+    include-all: true
+    filter: (?i)🇨🇳|台|新北|彰化|TW|Taiwan
+    exclude-filter: (?i)倍|消耗
+    type: url-test
+    interval: 300
+    proxies:
+      - REJECT
+
+  - name: 🇸🇬 新加坡节点
+    include-all: true
+    filter: (?i)新加坡|坡|🇸🇬|SG|狮城|Singapore
+    exclude-filter: (?i)倍|消耗
+    type: url-test
+    interval: 300
+    proxies:
+      - REJECT
+
+  - name: 🇮🇳 印度节点
+    include-all: true
+    filter: (?i)🇮🇳|IN|印度|印
+    exclude-filter: (?i)倍|消耗
+    type: url-test
+    interval: 300
+    proxies:
+      - REJECT
+
+  - name: 🇬🇧 英国节点
+    include-all: true
+    filter: (?i)🇬🇧|GB|英国|英
+    exclude-filter: (?i)倍|消耗
+    type: url-test
+    interval: 300
+    proxies:
+      - REJECT
+
+  - name: 🇦🇷 阿根廷节点
+    include-all: true
+    filter: (?i)🇦🇷|AR|阿根廷|廷
+    exclude-filter: (?i)倍|消耗
+    type: url-test
+    interval: 300
+    proxies:
+      - REJECT
+
+  - name: 🇹🇷 土耳其节点
+    include-all: true
+    filter: (?i)🇹🇷|TR|土耳其|土
+    exclude-filter: (?i)倍|消耗
+    type: url-test
+    interval: 300
+    proxies:
+      - REJECT
+
+  - name: 🇫🇷 法国节点
+    include-all: true
+    filter: (?i)🇫🇷|FR|法国|法
+    exclude-filter: (?i)倍|消耗
+    type: url-test
+    interval: 300
+    proxies:
+      - REJECT
+
+  - name: 🇩🇪 德国节点
+    include-all: true
+    filter: (?i)🇩🇪|DE|德国|德
+    exclude-filter: (?i)倍|消耗
+    type: url-test
+    interval: 300
+    proxies:
+      - REJECT
+
+  - name: 🇨🇦 加拿大节点
+    include-all: true
+    filter: (?i)🇨🇦|CA|加拿大|加
+    exclude-filter: (?i)倍|消耗
+    type: url-test
+    interval: 300
+    proxies:
+      - REJECT
+
+  - name: 🇵🇭 菲律宾节点
+    include-all: true
+    filter: (?i)🇵🇭|PH|菲律宾|菲
+    exclude-filter: (?i)倍|消耗
+    type: url-test
+    interval: 300
+    proxies:
+      - REJECT
+
+  - name: 🇦🇺 澳大利亚节点
+    include-all: true
+    filter: (?i)🇦🇺|AU|澳大利亚|澳
+    exclude-filter: (?i)倍|消耗
+    type: url-test
+    interval: 300
+    proxies:
+      - REJECT
+
+  - name: 🇲🇴 澳门节点
+    include-all: true
+    filter: (?i)🇲🇴|MO|澳|澳门
+    exclude-filter: (?i)倍|消耗
+    type: url-test
+    interval: 300
+    proxies:
+      - REJECT
+
+  - name: 🇰🇷 韩国节点
+    include-all: true
+    filter: (?i)🇰🇷|KR|Korea|KOR|首尔|韩|韓
+    exclude-filter: (?i)倍|消耗
+    type: url-test
+    interval: 300
+    proxies:
+      - REJECT
+
+  - name: 🇺🇦 乌克兰节点
+    include-all: true
+    filter: (?i)🇺🇦|UA|乌|乌克兰
+    exclude-filter: (?i)倍|消耗
+    type: url-test
+    interval: 300
+    proxies:
+      - REJECT
+
+  - name: 🇻🇳 越南节点
+    include-all: true
+    filter: (?i)🇻🇳|VN|越|越南
+    exclude-filter: (?i)倍|消耗
+    type: url-test
+    interval: 300
+    proxies:
+      - REJECT
+
+  - name: 🇷🇺 俄罗斯节点
+    include-all: true
+    filter: (?i)🇷🇺|RU|俄罗斯|俄
+    exclude-filter: (?i)倍|消耗
+    type: url-test
+    interval: 300
+    proxies:
+      - REJECT
+
+  - name: 🇹🇭 泰国节点
+    include-all: true
+    filter: (?i)🇹🇭|TH|泰国|泰
+    exclude-filter: (?i)倍|消耗
+    type: url-test
+    interval: 300
+    proxies:
+      - REJECT
+
+  - name: 🇲🇾 马来西亚节点
+    include-all: true
+    filter: (?i)🇲🇾|MY|马来西亚|马
+    exclude-filter: (?i)倍|消耗
+    type: url-test
+    interval: 300
+    proxies:
+      - REJECT
+
+  - name: 🇳🇴 挪威节点
+    include-all: true
+    filter: (?i)🇳🇴|NO|挪|挪威
+    exclude-filter: (?i)倍|消耗
+    type: url-test
+    interval: 300
+    proxies:
+      - REJECT
+
+  - name: 🇮🇩 印度尼西亚节点
+    include-all: true
+    filter: (?i)🇮🇩|ID|印尼|印度尼西亚
+    exclude-filter: (?i)倍|消耗
+    type: url-test
+    interval: 300
+    proxies:
+      - REJECT
+
+  - name: 🇳🇬 尼日利亚节点
+    include-all: true
+    filter: (?i)🇳🇬|NG|尼日利亚
+    exclude-filter: (?i)倍|消耗
+    type: url-test
+    interval: 300
+    proxies:
+      - REJECT
+
+  - name: 🇧🇷 巴西节点
+    include-all: true
+    filter: (?i)🇧🇷|BR|巴西
+    exclude-filter: (?i)倍|消耗
+    type: url-test
+    interval: 300
+    proxies:
+      - REJECT
+
+  - name: 🎥 奈飞节点
+    include-all: true
+    filter: (?i)NF|奈飞|解锁|Netflix|NETFLIX|Media
+    type: select
+  - name: 🎥 奈飞视频
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择单倍节点
+      - 🎥 奈飞节点
+      - 🇸🇬 新加坡节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+      - DIRECT
+      
+  - name: 📲 电报消息
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择单倍节点
+      - 🇸🇬 新加坡节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+      - DIRECT
+      
+  - name: 📹 油管视频
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择单倍节点
+      - 🇸🇬 新加坡节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+      - DIRECT
+
+  - name: 📺 巴哈姆特
+    type: select
+    proxies:
+      - 🇨🇳 台湾节点
+      - 🚀 节点选择
+      - 🚀 手动切换
+      - DIRECT
+  - name: 📺 哔哩哔哩
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - 🇨🇳 台湾节点
+      - 🇭🇰 香港节点
+  - name: 🌍 国外媒体
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择单倍节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 新加坡节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+      - DIRECT
+  - name: 🌏 国内媒体
+    type: select
+    proxies:
+      - DIRECT
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 新加坡节点
+      - 🇯🇵 日本节点
+      - 🚀 手动切换
+  - name: 📢 谷歌FCM
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 🇺🇲 美国节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 新加坡节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+
+  - name: 🎮 游戏平台
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 🇺🇲 美国节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 新加坡节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+  - name: 🎶 网易音乐
+    type: select
+    include-all: true
+    filter: (?i)网易|音乐|NetEase|Music
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择单倍节点
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择单倍节点
+  - name: 🛑 广告拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🍃 应用净化
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择单倍节点
+      - DIRECT
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 新加坡节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+
+
+
+rule-providers:
+  custom_direct:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/mysub/custom_direct.list
+    path: ./ruleset/custom_direct.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Surrey:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/mysub/Surrey.list
+    path: ./ruleset/Surrey.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  custom_proxy:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/mysub/custom_proxy.list
+    path: ./ruleset/custom_proxy.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  LocalAreaNetwork:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/LocalAreaNetwork.list
+    path: ./ruleset/LocalAreaNetwork.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  UnBan:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/UnBan.list
+    path: ./ruleset/UnBan.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  BanAD:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/BanAD.list
+    path: ./ruleset/BanAD.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  BanProgramAD:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/BanProgramAD.list
+    path: ./ruleset/BanProgramAD.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  GoogleFCM:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/GoogleFCM.list
+    path: ./ruleset/GoogleFCM.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  GoogleCN:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/GoogleCN.list
+    path: ./ruleset/GoogleCN.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  SteamCN:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/SteamCN.list
+    path: ./ruleset/SteamCN.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Bing:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Bing.list
+    path: ./ruleset/Bing.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  OneDrive:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/OneDrive.list
+    path: ./ruleset/OneDrive.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Microsoft:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Microsoft.list
+    path: ./ruleset/Microsoft.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Apple:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Apple.list
+    path: ./ruleset/Apple.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Telegram:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Telegram.list
+    path: ./ruleset/Telegram.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  OpenAi:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/OpenAi.list
+    path: ./ruleset/OpenAi.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Claude:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/Claude.list
+    path: ./ruleset/Claude.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Gemini:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/Gemini.list
+    path: ./ruleset/Gemini.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Twitter:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/Twitter.list
+    path: ./ruleset/Twitter.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  AI:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/AI.list
+    path: ./ruleset/AI.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Alibaba:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/Alibaba.list
+    path: ./ruleset/Alibaba.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+    
+  Baidu:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/Baidu.list
+    path: ./ruleset/Baidu.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  JD:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/JD.list
+    path: ./ruleset/JD.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  PDD:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/PDD.list
+    path: ./ruleset/PDD.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Tencent:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/Tencent.list
+    path: ./ruleset/Tencent.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Binance:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/Binance.list
+    path: ./ruleset/Binance.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Github:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/Github.list
+    path: ./ruleset/Github.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Wikipedia:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/Wikipedia.list
+    path: ./ruleset/Wikipedia.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Instagram:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/Instagram.list
+    path: ./ruleset/Instagram.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Whatsapp:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/Whatsapp.list
+    path: ./ruleset/Whatsapp.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Pixiv:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/Pixiv.list
+    path: ./ruleset/Pixiv.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Porn:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/Porn.list
+    path: ./ruleset/Porn.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Google:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/Google.list
+    path: ./ruleset/Google.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  JetBrains:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/JetBrains.list
+    path: ./ruleset/JetBrains.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  NetEaseMusic:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/NetEaseMusic.list
+    path: ./ruleset/NetEaseMusic.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Epic:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/Epic.list
+    path: ./ruleset/Epic.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Origin:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/Origin.list
+    path: ./ruleset/Origin.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Sony:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/Sony.list
+    path: ./ruleset/Sony.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Steam:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/Steam.list
+    path: ./ruleset/Steam.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Nintendo:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/Nintendo.list
+    path: ./ruleset/Nintendo.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  YouTube:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/YouTube.list
+    path: ./ruleset/YouTube.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Netflix:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/Netflix.list
+    path: ./ruleset/Netflix.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Bahamut:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/Bahamut.list
+    path: ./ruleset/Bahamut.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  BilibiliHMT:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/BilibiliHMT.list
+    path: ./ruleset/BilibiliHMT.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Bilibili:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/Bilibili.list
+    path: ./ruleset/Bilibili.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  ChinaMedia:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/ChinaMedia.list
+    path: ./ruleset/ChinaMedia.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  ProxyMedia:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/ProxyMedia.list
+    path: ./ruleset/ProxyMedia.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  ProxyGFWlist:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/ProxyGFWlist.list
+    path: ./ruleset/ProxyGFWlist.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  ChinaDomain:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/ChinaDomain.list
+    path: ./ruleset/ChinaDomain.list
+    behavior: domain
+    interval: 86400
+    format: text
+    type: http
+  ChinaCompanyIp:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/ChinaCompanyIp.list
+    path: ./ruleset/ChinaCompanyIp.list
+    behavior: ipcidr
+    interval: 86400
+    format: text
+    type: http
+  Download:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Download.list
+    path: ./ruleset/Download.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+rules:
+  - "RULE-SET,custom_direct,🎯 全球直连"
+  - "RULE-SET,Surrey,💬 Surrey" # New
+  - "RULE-SET,custom_proxy,🚀 节点选择"
+  - "RULE-SET,LocalAreaNetwork,🎯 全球直连"
+  - "RULE-SET,UnBan,🎯 全球直连"
+  - "RULE-SET,BanAD,🛑 广告拦截"
+  - "RULE-SET,BanProgramAD,🍃 应用净化"
+  - "RULE-SET,GoogleFCM,📢 谷歌FCM"
+  - "RULE-SET,GoogleCN,🎯 全球直连"
+  - "RULE-SET,SteamCN,🎯 全球直连"
+  - "RULE-SET,Bing,Ⓜ️ 微软Bing"
+  - "RULE-SET,OneDrive,Ⓜ️ 微软云盘"
+  - "RULE-SET,Microsoft,Ⓜ️ 微软服务"
+  - "RULE-SET,Apple,🍎 苹果服务"
+  - "RULE-SET,Telegram,📲 电报消息"
+  - "RULE-SET,OpenAi,💬 OpenAi"
+  # New
+  - "RULE-SET,Claude,💬 Claude"
+  - "RULE-SET,Gemini,💬 Gemini"
+  - "RULE-SET,Twitter,💬 Grok（X）"
+  - "RULE-SET,AI,💬 国外AI工具"
+  - "RULE-SET,Alibaba,🎯 全球直连"
+  - "RULE-SET,Baidu,🎯 全球直连"
+  - "RULE-SET,JD,🎯 全球直连"
+  - "RULE-SET,PDD,🎯 全球直连"
+  - "RULE-SET,Tencent,🎯 全球直连"
+  - "RULE-SET,Binance,🚀 节点选择"
+  - "RULE-SET,Github,🚀 节点选择"
+  - "RULE-SET,Wikipedia,🚀 节点选择"
+  - "RULE-SET,Instagram,🚀 节点选择"
+  - "RULE-SET,Whatsapp,🚀 节点选择"
+  - "RULE-SET,Pixiv,🚀 节点选择"
+  - "RULE-SET,Porn,🚀 节点选择"
+  - "RULE-SET,Google,🚀 节点选择"
+  - "RULE-SET,JetBrains,🚀 节点选择"
+  # New
+  - "RULE-SET,NetEaseMusic,🎶 网易音乐"
+  - "RULE-SET,Epic,🎮 游戏平台"
+  - "RULE-SET,Origin,🎮 游戏平台"
+  - "RULE-SET,Sony,🎮 游戏平台"
+  - "RULE-SET,Steam,🎮 游戏平台"
+  - "RULE-SET,Nintendo,🎮 游戏平台"
+  - "RULE-SET,YouTube,📹 油管视频"
+  - "RULE-SET,Netflix,🎥 奈飞视频"
+  - "RULE-SET,Bahamut,📺 巴哈姆特"
+  - "RULE-SET,BilibiliHMT,📺 哔哩哔哩"
+  - "RULE-SET,Bilibili,📺 哔哩哔哩"
+  - "RULE-SET,ChinaMedia,🌏 国内媒体"
+  - "RULE-SET,ProxyMedia,🌍 国外媒体"
+  - "RULE-SET,ProxyGFWlist,🚀 节点选择"
+  - "RULE-SET,ChinaDomain,🎯 全球直连"
+  - "RULE-SET,ChinaCompanyIp,🎯 全球直连"
+  - "RULE-SET,Download,🎯 全球直连"
+  - "GEOIP,CN,🎯 全球直连"
+  - "MATCH,🐟 漏网之鱼"
