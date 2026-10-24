@@ -4,16 +4,16 @@ proxy-groups:
   - name: （S手动切换，U自动选最小延迟，只建议手动切换最上面三个）
     type: select
     proxies:
-      - DIRECT
       - REJECT
+      - DIRECT
 
   - name: 🚀 节点选择
     type: select
     proxies:
-      - ♻️ 自动选择单倍节点
+      - ♻️ 自动选择单倍最快节点
       - 🚀 手动切换
       - ⚡ 多倍节点
-      - 🆓 免费节点
+      - 📶 流量节点
       - 😀 自建节点
       - 🇭🇰 香港节点
       - 🇯🇵 日本节点
@@ -45,259 +45,213 @@ proxy-groups:
   - name: 😀 自建节点
     type: select
     include-all: true
-    filter: (?i)自建|搭建
-    proxies:
-      - REJECT
+    filter: '(自建|PCServer)'
 
   - name: ⚡ 多倍节点
     type: select
     include-all: true
-    filter: (?i)倍|消耗
-    exclude-filter: (?i)单|免费|免
-    proxies:
-      - REJECT
+    filter: '(?=.*(倍|x消耗|x[2-9]|x\d{2,}|x1\.[1-9]))^((?!(单|免费|免)).)*$'
 
   - name: 🚀 手动切换
-    include-all: true
     type: select
+    include-all: true
+    filter: '.*'
+
+  - name: 📶 流量节点
+    type: select
+    include-all: true
+    filter: '（用量）'
 
   - name: （从这个开始不建议切换，除非明白原理）
     type: select
     proxies:
-      - DIRECT
       - REJECT
+      - DIRECT
 
   - name: 💬 OpenAi
     type: select
     proxies:
       - 🇯🇵 日本节点
+      - 🇯🇵 日本节点（流量）
+      - 🇨🇳 台湾节点
+      - 🇨🇳 台湾节点（流量）
       - 🇺🇲 美国节点
+      - 🇺🇲 美国节点（流量）
       - 🇸🇬 新加坡节点
+      - 🇸🇬 新加坡节点（流量）
       - 🇮🇳 印度节点
+      - 🇮🇳 印度节点（流量）
       - 🇬🇧 英国节点
-      - 🇹🇷 土耳其节点
-      - 🇫🇷 法国节点
-      - 🇩🇪 德国节点
+      - 🇬🇧 英国节点（流量）
       - 🇨🇦 加拿大节点
+      - 🇨🇦 加拿大节点（流量）
       - 🇵🇭 菲律宾节点
+      - 🇵🇭 菲律宾节点（流量）
+      - 🇰🇷 韩国节点
+      - 🇰🇷 韩国节点（流量）
+      - 🇻🇳 越南节点
+      - 🇻🇳 越南节点（流量）
+      - 🇹🇭 泰国节点
+      - 🇹🇭 泰国节点（流量）
+      - 🇲🇾 马来西亚节点
+      - 🇲🇾 马来西亚节点（流量）
+      - 🇺🇦 乌克兰节点
+      - 🇺🇦 乌克兰节点（流量）
       - 🇦🇺 澳大利亚节点
+      - 🇦🇺 澳大利亚节点（流量）
       - 🚀 节点选择
       - 😀 自建节点
       - ⚡ 多倍节点
       - 🚀 手动切换
-      - ♻️ 自动选择单倍节点
-      - 🆓 免费节点
-      - 🇦🇷 阿根廷节点
-      - 🇰🇷 韩国节点
-      - 🇺🇦 乌克兰节点
-      - 🇻🇳 越南节点
-      - 🇹🇭 泰国节点
-      - 🇲🇾 马来西亚节点
-      - 🇳🇴 挪威节点
-      - 🇮🇩 印度尼西亚节点
-      - 🇳🇬 尼日利亚节点
-      - 🇧🇷 巴西节点
+      - 📶 流量节点
 
   - name: 💬 Claude
     type: select
     proxies:
       - 🇯🇵 日本节点
-      - 🇺🇲 美国节点
-      - 🇸🇬 新加坡节点
-      - 🇮🇳 印度节点
-      - 🇬🇧 英国节点
-      - 🇹🇷 土耳其节点
-      - 🇫🇷 法国节点
-      - 🇩🇪 德国节点
-      - 🇨🇦 加拿大节点
-      - 🇵🇭 菲律宾节点
-      - 🇦🇺 澳大利亚节点
-      - 🚀 节点选择
-      - 😀 自建节点
-      - ⚡ 多倍节点
-      - 🚀 手动切换
-      - ♻️ 自动选择单倍节点
-      - 🆓 免费节点
-      - 🇦🇷 阿根廷节点
-      - 🇰🇷 韩国节点
-      - 🇺🇦 乌克兰节点
-      - 🇻🇳 越南节点
-      - 🇹🇭 泰国节点
-      - 🇲🇾 马来西亚节点
-      - 🇳🇴 挪威节点
-      - 🇮🇩 印度尼西亚节点
-      - 🇳🇬 尼日利亚节点
-      - 🇧🇷 巴西节点
-
-  - name: 💬 Gemini
-    type: select
-    proxies:
-      - 🇯🇵 日本节点
-      - 🇺🇲 美国节点
-      - 🇸🇬 新加坡节点
-      - 🇮🇳 印度节点
-      - 🇬🇧 英国节点
-      - 🇹🇷 土耳其节点
-      - 🇫🇷 法国节点
-      - 🇩🇪 德国节点
-      - 🇨🇦 加拿大节点
-      - 🇵🇭 菲律宾节点
-      - 🇦🇺 澳大利亚节点
-      - 🚀 节点选择
-      - 😀 自建节点
-      - ⚡ 多倍节点
-      - 🚀 手动切换
-      - ♻️ 自动选择单倍节点
-      - 🆓 免费节点
-      - 🇦🇷 阿根廷节点
-      - 🇰🇷 韩国节点
-      - 🇺🇦 乌克兰节点
-      - 🇻🇳 越南节点
-      - 🇹🇭 泰国节点
-      - 🇲🇾 马来西亚节点
-      - 🇳🇴 挪威节点
-      - 🇮🇩 印度尼西亚节点
-      - 🇳🇬 尼日利亚节点
-      - 🇧🇷 巴西节点
-
-  - name: 💬 Grok（X）
-    type: select
-    proxies:
-      - 🇯🇵 日本节点
-      - 🇺🇲 美国节点
-      - 🇸🇬 新加坡节点
-      - 🇮🇳 印度节点
-      - 🇬🇧 英国节点
-      - 🇹🇷 土耳其节点
-      - 🇫🇷 法国节点
-      - 🇩🇪 德国节点
-      - 🇨🇦 加拿大节点
-      - 🇵🇭 菲律宾节点
-      - 🇦🇺 澳大利亚节点
-      - 🚀 节点选择
-      - 😀 自建节点
-      - ⚡ 多倍节点
-      - 🚀 手动切换
-      - ♻️ 自动选择单倍节点
-      - 🆓 免费节点
-      - 🇦🇷 阿根廷节点
-      - 🇰🇷 韩国节点
-      - 🇺🇦 乌克兰节点
-      - 🇻🇳 越南节点
-      - 🇹🇭 泰国节点
-      - 🇲🇾 马来西亚节点
-      - 🇳🇴 挪威节点
-      - 🇮🇩 印度尼西亚节点
-      - 🇳🇬 尼日利亚节点
-      - 🇧🇷 巴西节点
-
-  - name: 💬 国外AI工具
-    type: select
-    proxies:
-      - 🇯🇵 日本节点
-      - 🇺🇲 美国节点
-      - 🇸🇬 新加坡节点
-      - 🇮🇳 印度节点
-      - 🇬🇧 英国节点
-      - 🇹🇷 土耳其节点
-      - 🇫🇷 法国节点
-      - 🇩🇪 德国节点
-      - 🇨🇦 加拿大节点
-      - 🇵🇭 菲律宾节点
-      - 🇦🇺 澳大利亚节点
-      - 🚀 节点选择
-      - 😀 自建节点
-      - ⚡ 多倍节点
-      - 🚀 手动切换
-      - ♻️ 自动选择单倍节点
-      - 🆓 免费节点
-      - 🇭🇰 香港节点
+      - 🇯🇵 日本节点（流量）
       - 🇨🇳 台湾节点
-      - 🇦🇷 阿根廷节点
-      - 🇲🇴 澳门节点
+      - 🇨🇳 台湾节点（流量）
+      - 🇺🇲 美国节点
+      - 🇺🇲 美国节点（流量）
+      - 🇸🇬 新加坡节点
+      - 🇸🇬 新加坡节点（流量）
+      - 🇮🇳 印度节点
+      - 🇮🇳 印度节点（流量）
+      - 🇬🇧 英国节点
+      - 🇬🇧 英国节点（流量）
+      - 🇨🇦 加拿大节点
+      - 🇨🇦 加拿大节点（流量）
+      - 🇵🇭 菲律宾节点
+      - 🇵🇭 菲律宾节点（流量）
       - 🇰🇷 韩国节点
-      - 🇺🇦 乌克兰节点
+      - 🇰🇷 韩国节点（流量）
       - 🇻🇳 越南节点
-      - 🇷🇺 俄罗斯节点
+      - 🇻🇳 越南节点（流量）
       - 🇹🇭 泰国节点
+      - 🇹🇭 泰国节点（流量）
       - 🇲🇾 马来西亚节点
-      - 🇳🇴 挪威节点
-      - 🇮🇩 印度尼西亚节点
-      - 🇳🇬 尼日利亚节点
-      - 🇧🇷 巴西节点
-      - DIRECT
-
-  - name: Ⓜ️ 微软Bing
-    type: select
-    proxies:
-      - DIRECT
+      - 🇲🇾 马来西亚节点（流量）
+      - 🇺🇦 乌克兰节点
+      - 🇺🇦 乌克兰节点（流量）
+      - 🇦🇺 澳大利亚节点
+      - 🇦🇺 澳大利亚节点（流量）
       - 🚀 节点选择
       - 😀 自建节点
       - ⚡ 多倍节点
       - 🚀 手动切换
-      - ♻️ 自动选择单倍节点
-      - 🆓 免费节点
-      - 🇭🇰 香港节点
-      - 🇯🇵 日本节点
-      - 🇺🇲 美国节点
-      - 🇨🇳 台湾节点
-      - 🇸🇬 新加坡节点
-      - 🇮🇳 印度节点
-      - 🇬🇧 英国节点
-      - 🇦🇷 阿根廷节点
-      - 🇹🇷 土耳其节点
-      - 🇫🇷 法国节点
-      - 🇩🇪 德国节点
-      - 🇨🇦 加拿大节点
-      - 🇵🇭 菲律宾节点
-      - 🇦🇺 澳大利亚节点
-      - 🇲🇴 澳门节点
-      - 🇰🇷 韩国节点
-      - 🇺🇦 乌克兰节点
-      - 🇻🇳 越南节点
-      - 🇷🇺 俄罗斯节点
-      - 🇹🇭 泰国节点
-      - 🇲🇾 马来西亚节点
-      - 🇳🇴 挪威节点
-      - 🇮🇩 印度尼西亚节点
-      - 🇳🇬 尼日利亚节点
-      - 🇧🇷 巴西节点
+      - 📶 流量节点
 
-  - name: Ⓜ️ 微软云盘
+  - name: 💬 Grok（X，twitter）
     type: select
     proxies:
-      - DIRECT
+      - 🇯🇵 日本节点
+      - 🇯🇵 日本节点（流量）
+      - 🇨🇳 台湾节点
+      - 🇨🇳 台湾节点（流量）
+      - 🇺🇲 美国节点
+      - 🇺🇲 美国节点（流量）
+      - 🇸🇬 新加坡节点
+      - 🇸🇬 新加坡节点（流量）
+      - 🇮🇳 印度节点
+      - 🇮🇳 印度节点（流量）
+      - 🇬🇧 英国节点
+      - 🇬🇧 英国节点（流量）
+      - 🇨🇦 加拿大节点
+      - 🇨🇦 加拿大节点（流量）
+      - 🇵🇭 菲律宾节点
+      - 🇵🇭 菲律宾节点（流量）
+      - 🇰🇷 韩国节点
+      - 🇰🇷 韩国节点（流量）
+      - 🇻🇳 越南节点
+      - 🇻🇳 越南节点（流量）
+      - 🇹🇭 泰国节点
+      - 🇹🇭 泰国节点（流量）
+      - 🇲🇾 马来西亚节点
+      - 🇲🇾 马来西亚节点（流量）
+      - 🇺🇦 乌克兰节点
+      - 🇺🇦 乌克兰节点（流量）
+      - 🇦🇺 澳大利亚节点
+      - 🇦🇺 澳大利亚节点（流量）
       - 🚀 节点选择
       - 😀 自建节点
       - ⚡ 多倍节点
       - 🚀 手动切换
-      - ♻️ 自动选择单倍节点
-      - 🆓 免费节点
-      - 🇭🇰 香港节点
+      - 📶 流量节点
+
+  - name: 💬 Gemini（不含Google）
+    type: select
+    proxies:
       - 🇯🇵 日本节点
-      - 🇺🇲 美国节点
+      - 🇯🇵 日本节点（流量）
       - 🇨🇳 台湾节点
+      - 🇨🇳 台湾节点（流量）
+      - 🇺🇲 美国节点
+      - 🇺🇲 美国节点（流量）
       - 🇸🇬 新加坡节点
+      - 🇸🇬 新加坡节点（流量）
       - 🇮🇳 印度节点
+      - 🇮🇳 印度节点（流量）
       - 🇬🇧 英国节点
-      - 🇦🇷 阿根廷节点
-      - 🇹🇷 土耳其节点
-      - 🇫🇷 法国节点
-      - 🇩🇪 德国节点
+      - 🇬🇧 英国节点（流量）
       - 🇨🇦 加拿大节点
+      - 🇨🇦 加拿大节点（流量）
       - 🇵🇭 菲律宾节点
-      - 🇦🇺 澳大利亚节点
-      - 🇲🇴 澳门节点
+      - 🇵🇭 菲律宾节点（流量）
       - 🇰🇷 韩国节点
-      - 🇺🇦 乌克兰节点
+      - 🇰🇷 韩国节点（流量）
       - 🇻🇳 越南节点
-      - 🇷🇺 俄罗斯节点
+      - 🇻🇳 越南节点（流量）
       - 🇹🇭 泰国节点
+      - 🇹🇭 泰国节点（流量）
       - 🇲🇾 马来西亚节点
-      - 🇳🇴 挪威节点
-      - 🇮🇩 印度尼西亚节点
-      - 🇳🇬 尼日利亚节点
-      - 🇧🇷 巴西节点
+      - 🇲🇾 马来西亚节点（流量）
+      - 🇺🇦 乌克兰节点
+      - 🇺🇦 乌克兰节点（流量）
+      - 🇦🇺 澳大利亚节点
+      - 🇦🇺 澳大利亚节点（流量）
+      - 🚀 节点选择
+      - 😀 自建节点
+      - ⚡ 多倍节点
+      - 🚀 手动切换
+      - 📶 流量节点
+
+  - name: 💬 国外AI（兜底）
+    type: select
+    proxies:
+      - 🇯🇵 日本节点
+      - 🇯🇵 日本节点（流量）
+      - 🇨🇳 台湾节点
+      - 🇨🇳 台湾节点（流量）
+      - 🇺🇲 美国节点
+      - 🇺🇲 美国节点（流量）
+      - 🇸🇬 新加坡节点
+      - 🇸🇬 新加坡节点（流量）
+      - 🇮🇳 印度节点
+      - 🇮🇳 印度节点（流量）
+      - 🇬🇧 英国节点
+      - 🇬🇧 英国节点（流量）
+      - 🇨🇦 加拿大节点
+      - 🇨🇦 加拿大节点（流量）
+      - 🇵🇭 菲律宾节点
+      - 🇵🇭 菲律宾节点（流量）
+      - 🇰🇷 韩国节点
+      - 🇰🇷 韩国节点（流量）
+      - 🇻🇳 越南节点
+      - 🇻🇳 越南节点（流量）
+      - 🇹🇭 泰国节点
+      - 🇹🇭 泰国节点（流量）
+      - 🇲🇾 马来西亚节点
+      - 🇲🇾 马来西亚节点（流量）
+      - 🇺🇦 乌克兰节点
+      - 🇺🇦 乌克兰节点（流量）
+      - 🇦🇺 澳大利亚节点
+      - 🇦🇺 澳大利亚节点（流量）
+      - 🚀 节点选择
+      - 😀 自建节点
+      - ⚡ 多倍节点
+      - 🚀 手动切换
+      - 📶 流量节点
 
   - name: Ⓜ️ 微软服务
     type: select
@@ -307,8 +261,8 @@ proxy-groups:
       - 😀 自建节点
       - ⚡ 多倍节点
       - 🚀 手动切换
-      - ♻️ 自动选择单倍节点
-      - 🆓 免费节点
+      - ♻️ 自动选择单倍最快节点
+      - 📶 流量节点
       - 🇭🇰 香港节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
@@ -334,6 +288,431 @@ proxy-groups:
       - 🇮🇩 印度尼西亚节点
       - 🇳🇬 尼日利亚节点
       - 🇧🇷 巴西节点
+
+  - name: （从这个开始为自动选择低延迟或无需切换）
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+
+  - name: ♻️ 自动选择单倍最快节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 新加坡节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🇬🇧 英国节点
+      - 🇫🇷 法国节点
+      - 🇩🇪 德国节点
+      - 🇹🇷 土耳其节点
+      - 🇦🇷 阿根廷节点
+      - 🇵🇭 菲律宾节点
+      - 🇷🇺 俄罗斯节点
+      - 🇹🇭 泰国节点
+      - 🇲🇾 马来西亚节点
+      - 🇳🇬 尼日利亚节点
+      - 🇧🇷 巴西节点
+      - 🇮🇳 印度节点
+      - 🇨🇦 加拿大节点
+      - 🇦🇺 澳大利亚节点
+      - 📶 流量节点
+      - 😀 自建节点
+
+  - name: 🇭🇰 香港节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(港|HK|Hong Kong|🇭🇰|HongKong))^((?!(取消检测倍率|（用量）)).)*$'
+    proxies:
+      - REJECT
+
+  - name: 🇯🇵 日本节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(🇯🇵|日本|JP|Japan))^((?!(尼日|免费|取消检测倍率|（用量）)).)*$'
+    proxies:
+      - REJECT
+
+  - name: 🇯🇵 日本节点（流量）
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '^(?=.*(🇯🇵|日本|JP|Japan))^((?!(尼日|免费|5X|10X)).)(?=.*（用量）).*$'
+    proxies:
+      - REJECT
+
+  - name: 🇺🇲 美国节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 150
+    include-all: true
+    filter: '(?=.*(🇺🇲|美国|🇺🇸|US|United States))^((?!(取消检测倍率|（用量）)).)*$'
+    proxies:
+      - REJECT
+
+  - name: 🇺🇲 美国节点（流量）
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 150
+    include-all: true
+    filter: '^(?=.*(🇺🇲|美国|🇺🇸|US|United States))^((?!(5X|10X)).)(?=.*（用量）).*$'
+    proxies:
+      - REJECT
+
+  - name: 🇨🇳 台湾节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(台湾|TW|Taiwan))^((?!(取消检测倍率|（用量）)).)*$'
+    proxies:
+      - REJECT
+
+  - name: 🇨🇳 台湾节点（流量）
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '^(?=.*(台湾|TW|Taiwan))^((?!(5X|10X)).)(?=.*（用量）).*$'
+    proxies:
+      - REJECT
+
+  - name: 🇸🇬 新加坡节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(SG|新加坡))^((?!(取消检测倍率|（用量）)).)*$'
+    proxies:
+      - REJECT
+
+  - name: 🇸🇬 新加坡节点（流量）
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '^(?=.*(SG|新加坡))^((?!(5X|10X)).)(?=.*（用量）).*$'
+    proxies:
+      - REJECT
+
+  - name: 🇮🇳 印度节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(🇮🇳|IN|印度))^((?!(印尼|印度尼|取消检测倍率|（用量）)).)*$'
+    proxies:
+      - REJECT
+
+  - name: 🇮🇳 印度节点（流量）
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(🇮🇳|IN|印度))^((?!(印尼|印度尼|5X|10X)).)(?=.*（用量）).*$'
+    proxies:
+      - REJECT
+
+  - name: 🇬🇧 英国节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(🇬🇧|GB|英国|英))^((?!(取消检测倍率|（用量）)).)*$'
+    proxies:
+      - REJECT
+
+  - name: 🇬🇧 英国节点（流量）
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(🇬🇧|GB|英国|英))^((?!(5X|10X)).)(?=.*（用量）).*$'
+    proxies:
+      - REJECT
+
+  - name: 🇨🇦 加拿大节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(🇨🇦|CA|加拿大))^((?!(取消检测倍率|（用量）)).)*$'
+    proxies:
+      - REJECT
+
+  - name: 🇨🇦 加拿大节点（流量）
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(🇨🇦|CA|加拿大))^((?!(5X|10X)).)(?=.*（用量）).*$'
+    proxies:
+      - REJECT
+
+  - name: 🇵🇭 菲律宾节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(🇵🇭|PH|菲律宾|菲))^((?!(取消检测倍率|（用量）)).)*$'
+    proxies:
+      - REJECT
+
+  - name: 🇵🇭 菲律宾节点（流量）
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(🇵🇭|PH|菲律宾|菲))^((?!(5X|10X)).)(?=.*（用量）).*$'
+    proxies:
+      - REJECT
+
+  - name: 🇺🇦 乌克兰节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(🇺🇦|UA|乌克兰))^((?!(取消检测倍率|（用量）)).)*$'
+    proxies:
+      - REJECT
+
+  - name: 🇺🇦 乌克兰节点（流量）
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(🇺🇦|UA|乌克兰))^((?!(5X|10X)).)(?=.*（用量）).*$'
+    proxies:
+      - REJECT
+
+  - name: 🇻🇳 越南节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(🇻🇳|VN|越|越南))^((?!(取消检测倍率|（用量）)).)*$'
+    proxies:
+      - REJECT
+
+  - name: 🇻🇳 越南节点（流量）
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(🇻🇳|VN|越|越南))^((?!(5X|10X)).)(?=.*（用量）).*$'
+    proxies:
+      - REJECT
+
+  - name: 🇹🇭 泰国节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(🇹🇭|TH|泰国))^((?!(取消检测倍率|（用量）)).)*$'
+    proxies:
+      - REJECT
+
+  - name: 🇹🇭 泰国节点（流量）
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(🇹🇭|TH|泰国))^((?!(5X|10X)).)(?=.*（用量）).*$'
+    proxies:
+      - REJECT
+
+  - name: 🇰🇷 韩国节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(🇰🇷|KR|Korea|KOR|首尔|韩|韓))^((?!(取消检测倍率|（用量）)).)*$'
+    proxies:
+      - REJECT
+
+  - name: 🇰🇷 韩国节点（流量）
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(🇰🇷|KR|Korea|KOR|首尔|韩|韓))^((?!(5X|10X)).)(?=.*（用量）).*$'
+    proxies:
+      - REJECT
+
+  - name: 🇲🇾 马来西亚节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(🇲🇾|MY|马来西亚))^((?!(取消检测倍率|（用量）)).)*$'
+    proxies:
+      - REJECT
+
+  - name: 🇲🇾 马来西亚节点（流量）
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(🇲🇾|MY|马来西亚))^((?!(5X|10X)).)(?=.*（用量）).*$'
+    proxies:
+      - REJECT
+
+  - name: 🇦🇺 澳大利亚节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(🇦🇺|AU|澳大利亚|澳洲))^((?!(取消检测倍率|（用量）)).)*$'
+    proxies:
+      - REJECT
+
+  - name: 🇦🇺 澳大利亚节点（流量）
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(🇦🇺|AU|澳大利亚|澳洲))^((?!(5X|10X)).)(?=.*（用量）).*$'
+    proxies:
+      - REJECT
+
+  - name: 🇦🇷 阿根廷节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(🇦🇷|AR|阿根廷|廷))^((?!(取消检测倍率|（用量）)).)*$'
+    proxies:
+      - REJECT
+
+  - name: 🇹🇷 土耳其节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(🇹🇷|TR|土耳其|土))^((?!(取消检测倍率|（用量）)).)*$'
+    proxies:
+      - REJECT
+
+  - name: 🇫🇷 法国节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(🇫🇷|FR|法国|法))^((?!(取消检测倍率|（用量）)).)*$'
+    proxies:
+      - REJECT
+
+  - name: 🇩🇪 德国节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(🇩🇪|DE|德国|德))^((?!(取消检测倍率|（用量）)).)*$'
+    proxies:
+      - REJECT
+
+  - name: 🇲🇴 澳门节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(🇲🇴|MO|澳|澳门))^((?!(取消检测倍率|（用量）)).)*$'
+    proxies:
+      - REJECT
+
+  - name: 🇷🇺 俄罗斯节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(🇷🇺|RU|俄罗斯|俄))^((?!(取消检测倍率|（用量）)).)*$'
+    proxies:
+      - REJECT
+
+  - name: 🇳🇴 挪威节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(🇳🇴|NO|挪|挪威))^((?!(取消检测倍率|（用量）)).)*$'
+    proxies:
+      - REJECT
+
+  - name: 🇮🇩 印度尼西亚节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(🇮🇩|ID|印尼|印度尼西亚))^((?!(取消检测倍率|（用量）)).)*$'
+    proxies:
+      - REJECT
+
+  - name: 🇳🇬 尼日利亚节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(🇳🇬|NG|尼日利亚))^((?!(取消检测倍率|（用量）)).)*$'
+    proxies:
+      - REJECT
+
+  - name: 🇧🇷 巴西节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    filter: '(?=.*(🇧🇷|BR|巴西))^((?!(取消检测倍率|（用量）)).)*$'
+    proxies:
+      - REJECT
 
   - name: 🍎 苹果服务
     type: select
@@ -343,8 +722,8 @@ proxy-groups:
       - 😀 自建节点
       - ⚡ 多倍节点
       - 🚀 手动切换
-      - ♻️ 自动选择单倍节点
-      - 🆓 免费节点
+      - ♻️ 自动选择单倍最快节点
+      - 📶 流量节点
       - 🇭🇰 香港节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
@@ -371,454 +750,352 @@ proxy-groups:
       - 🇳🇬 尼日利亚节点
       - 🇧🇷 巴西节点
 
-  - name: 💬 Surrey
-    type: select
-    proxies:
-      - 🇺🇲 美国节点
-      - 🇬🇧 英国节点
-      - 🇯🇵 日本节点
-      - 🇸🇬 新加坡节点
-      - 🇮🇳 印度节点
-      - 🇹🇷 土耳其节点
-      - 🇫🇷 法国节点
-      - 🇩🇪 德国节点
-      - 🇨🇦 加拿大节点
-      - 🇵🇭 菲律宾节点
-      - 🇦🇺 澳大利亚节点
-      - 🇺🇦 乌克兰节点
-      - 🇳🇴 挪威节点
-      - 🇧🇷 巴西节点
-      - 🚀 节点选择
-      - 🚀 手动切换
-      - ⚡ 多倍节点
-      - 🆓 免费节点
-      - 😀 自建节点
-      - DIRECT
-
-  - name: （从这个开始为自动选择低延迟或无需切换）
-    type: select
-    proxies:
-      - DIRECT
-      - REJECT
-
-  - name: ♻️ 自动选择单倍节点
-    type: url-test
-    interval: 300
-    proxies:
-      - 🇭🇰 香港节点
-      - 🇨🇳 台湾节点
-      - 🇸🇬 新加坡节点
-      - 🇯🇵 日本节点
-      - 🇺🇲 美国节点
-      - 🇰🇷 韩国节点
-      - 🇬🇧 英国节点
-      - 🇫🇷 法国节点
-      - 🇩🇪 德国节点
-      - 🇹🇷 土耳其节点
-      - 🇦🇷 阿根廷节点
-      - 🇵🇭 菲律宾节点
-      - 🇷🇺 俄罗斯节点
-      - 🇹🇭 泰国节点
-      - 🇲🇾 马来西亚节点
-      - 🇳🇬 尼日利亚节点
-      - 🇧🇷 巴西节点
-      - 🇮🇳 印度节点
-      - 🇨🇦 加拿大节点
-      - 🇦🇺 澳大利亚节点
-      - 🆓 免费节点
-      - 😀 自建节点
-
-  - name: 🆓 免费节点
-    include-all: true
-    filter: (?i)免费|免
-    type: url-test
-    interval: 300
-    proxies:
-      - REJECT
-
-  - name: 🇭🇰 香港节点
-    include-all: true
-    filter: (?i)港|HK|Hong Kong|🇭🇰|HongKong
-    exclude-filter: (?i)倍|消耗
-    type: url-test
-    interval: 300
-    proxies:
-      - REJECT
-
-  - name: 🇯🇵 日本节点
-    include-all: true
-    filter: (?i)🇯🇵|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan
-    exclude-filter: (?i)倍|消耗
-    type: url-test
-    interval: 300
-    proxies:
-      - REJECT
-
-  - name: 🇺🇲 美国节点
-    include-all: true
-    filter: (?i)🇺🇲|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States
-    exclude-filter: (?i)倍|消耗
-    type: url-test
-    interval: 300
-    proxies:
-      - REJECT
-
-  - name: 🇨🇳 台湾节点
-    include-all: true
-    filter: (?i)🇨🇳|台|新北|彰化|TW|Taiwan
-    exclude-filter: (?i)倍|消耗
-    type: url-test
-    interval: 300
-    proxies:
-      - REJECT
-
-  - name: 🇸🇬 新加坡节点
-    include-all: true
-    filter: (?i)新加坡|坡|🇸🇬|SG|狮城|Singapore
-    exclude-filter: (?i)倍|消耗
-    type: url-test
-    interval: 300
-    proxies:
-      - REJECT
-
-  - name: 🇮🇳 印度节点
-    include-all: true
-    filter: (?i)🇮🇳|IN|印度|印
-    exclude-filter: (?i)倍|消耗
-    type: url-test
-    interval: 300
-    proxies:
-      - REJECT
-
-  - name: 🇬🇧 英国节点
-    include-all: true
-    filter: (?i)🇬🇧|GB|英国|英
-    exclude-filter: (?i)倍|消耗
-    type: url-test
-    interval: 300
-    proxies:
-      - REJECT
-
-  - name: 🇦🇷 阿根廷节点
-    include-all: true
-    filter: (?i)🇦🇷|AR|阿根廷|廷
-    exclude-filter: (?i)倍|消耗
-    type: url-test
-    interval: 300
-    proxies:
-      - REJECT
-
-  - name: 🇹🇷 土耳其节点
-    include-all: true
-    filter: (?i)🇹🇷|TR|土耳其|土
-    exclude-filter: (?i)倍|消耗
-    type: url-test
-    interval: 300
-    proxies:
-      - REJECT
-
-  - name: 🇫🇷 法国节点
-    include-all: true
-    filter: (?i)🇫🇷|FR|法国|法
-    exclude-filter: (?i)倍|消耗
-    type: url-test
-    interval: 300
-    proxies:
-      - REJECT
-
-  - name: 🇩🇪 德国节点
-    include-all: true
-    filter: (?i)🇩🇪|DE|德国|德
-    exclude-filter: (?i)倍|消耗
-    type: url-test
-    interval: 300
-    proxies:
-      - REJECT
-
-  - name: 🇨🇦 加拿大节点
-    include-all: true
-    filter: (?i)🇨🇦|CA|加拿大|加
-    exclude-filter: (?i)倍|消耗
-    type: url-test
-    interval: 300
-    proxies:
-      - REJECT
-
-  - name: 🇵🇭 菲律宾节点
-    include-all: true
-    filter: (?i)🇵🇭|PH|菲律宾|菲
-    exclude-filter: (?i)倍|消耗
-    type: url-test
-    interval: 300
-    proxies:
-      - REJECT
-
-  - name: 🇦🇺 澳大利亚节点
-    include-all: true
-    filter: (?i)🇦🇺|AU|澳大利亚|澳
-    exclude-filter: (?i)倍|消耗
-    type: url-test
-    interval: 300
-    proxies:
-      - REJECT
-
-  - name: 🇲🇴 澳门节点
-    include-all: true
-    filter: (?i)🇲🇴|MO|澳|澳门
-    exclude-filter: (?i)倍|消耗
-    type: url-test
-    interval: 300
-    proxies:
-      - REJECT
-
-  - name: 🇰🇷 韩国节点
-    include-all: true
-    filter: (?i)🇰🇷|KR|Korea|KOR|首尔|韩|韓
-    exclude-filter: (?i)倍|消耗
-    type: url-test
-    interval: 300
-    proxies:
-      - REJECT
-
-  - name: 🇺🇦 乌克兰节点
-    include-all: true
-    filter: (?i)🇺🇦|UA|乌|乌克兰
-    exclude-filter: (?i)倍|消耗
-    type: url-test
-    interval: 300
-    proxies:
-      - REJECT
-
-  - name: 🇻🇳 越南节点
-    include-all: true
-    filter: (?i)🇻🇳|VN|越|越南
-    exclude-filter: (?i)倍|消耗
-    type: url-test
-    interval: 300
-    proxies:
-      - REJECT
-
-  - name: 🇷🇺 俄罗斯节点
-    include-all: true
-    filter: (?i)🇷🇺|RU|俄罗斯|俄
-    exclude-filter: (?i)倍|消耗
-    type: url-test
-    interval: 300
-    proxies:
-      - REJECT
-
-  - name: 🇹🇭 泰国节点
-    include-all: true
-    filter: (?i)🇹🇭|TH|泰国|泰
-    exclude-filter: (?i)倍|消耗
-    type: url-test
-    interval: 300
-    proxies:
-      - REJECT
-
-  - name: 🇲🇾 马来西亚节点
-    include-all: true
-    filter: (?i)🇲🇾|MY|马来西亚|马
-    exclude-filter: (?i)倍|消耗
-    type: url-test
-    interval: 300
-    proxies:
-      - REJECT
-
-  - name: 🇳🇴 挪威节点
-    include-all: true
-    filter: (?i)🇳🇴|NO|挪|挪威
-    exclude-filter: (?i)倍|消耗
-    type: url-test
-    interval: 300
-    proxies:
-      - REJECT
-
-  - name: 🇮🇩 印度尼西亚节点
-    include-all: true
-    filter: (?i)🇮🇩|ID|印尼|印度尼西亚
-    exclude-filter: (?i)倍|消耗
-    type: url-test
-    interval: 300
-    proxies:
-      - REJECT
-
-  - name: 🇳🇬 尼日利亚节点
-    include-all: true
-    filter: (?i)🇳🇬|NG|尼日利亚
-    exclude-filter: (?i)倍|消耗
-    type: url-test
-    interval: 300
-    proxies:
-      - REJECT
-
-  - name: 🇧🇷 巴西节点
-    include-all: true
-    filter: (?i)🇧🇷|BR|巴西
-    exclude-filter: (?i)倍|消耗
-    type: url-test
-    interval: 300
-    proxies:
-      - REJECT
-
   - name: 🎥 奈飞节点
+    type: select
     include-all: true
-    filter: (?i)NF|奈飞|解锁|Netflix|NETFLIX|Media
-    type: select
-  - name: 🎥 奈飞视频
-    type: select
-    proxies:
-      - 🚀 节点选择
-      - ♻️ 自动选择单倍节点
-      - 🎥 奈飞节点
-      - 🇸🇬 新加坡节点
-      - 🇭🇰 香港节点
-      - 🇨🇳 台湾节点
-      - 🇯🇵 日本节点
-      - 🇺🇲 美国节点
-      - 🇰🇷 韩国节点
-      - 🚀 手动切换
-      - DIRECT
-      
+    filter: '(NF|奈飞|解锁|Netflix|NETFLIX|Media)'
+
   - name: 📲 电报消息
     type: select
     proxies:
       - 🚀 节点选择
-      - ♻️ 自动选择单倍节点
-      - 🇸🇬 新加坡节点
+      - 😀 自建节点
+      - ⚡ 多倍节点
+      - 🚀 手动切换
+      - ♻️ 自动选择单倍最快节点
+      - 📶 流量节点
       - 🇭🇰 香港节点
-      - 🇨🇳 台湾节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 新加坡节点
+      - 🇮🇳 印度节点
+      - 🇬🇧 英国节点
+      - 🇦🇷 阿根廷节点
+      - 🇹🇷 土耳其节点
+      - 🇫🇷 法国节点
+      - 🇩🇪 德国节点
+      - 🇨🇦 加拿大节点
+      - 🇵🇭 菲律宾节点
+      - 🇦🇺 澳大利亚节点
+      - 🇲🇴 澳门节点
       - 🇰🇷 韩国节点
-      - 🚀 手动切换
+      - 🇺🇦 乌克兰节点
+      - 🇻🇳 越南节点
+      - 🇷🇺 俄罗斯节点
+      - 🇹🇭 泰国节点
+      - 🇲🇾 马来西亚节点
+      - 🇳🇴 挪威节点
+      - 🇮🇩 印度尼西亚节点
+      - 🇳🇬 尼日利亚节点
+      - 🇧🇷 巴西节点
       - DIRECT
-      
+
+  - name: 📢 谷歌FCM
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 😀 自建节点
+      - ⚡ 多倍节点
+      - 🚀 手动切换
+      - ♻️ 自动选择单倍最快节点
+      - 📶 流量节点
+      - 🇭🇰 香港节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 新加坡节点
+      - 🇮🇳 印度节点
+      - 🇬🇧 英国节点
+      - 🇦🇷 阿根廷节点
+      - 🇹🇷 土耳其节点
+      - 🇫🇷 法国节点
+      - 🇩🇪 德国节点
+      - 🇨🇦 加拿大节点
+      - 🇵🇭 菲律宾节点
+      - 🇦🇺 澳大利亚节点
+      - 🇲🇴 澳门节点
+      - 🇰🇷 韩国节点
+      - 🇺🇦 乌克兰节点
+      - 🇻🇳 越南节点
+      - 🇷🇺 俄罗斯节点
+      - 🇹🇭 泰国节点
+      - 🇲🇾 马来西亚节点
+      - 🇳🇴 挪威节点
+      - 🇮🇩 印度尼西亚节点
+      - 🇳🇬 尼日利亚节点
+      - 🇧🇷 巴西节点
+      - DIRECT
+
   - name: 📹 油管视频
     type: select
     proxies:
       - 🚀 节点选择
-      - ♻️ 自动选择单倍节点
-      - 🇸🇬 新加坡节点
+      - 😀 自建节点
+      - ⚡ 多倍节点
+      - 🚀 手动切换
+      - ♻️ 自动选择单倍最快节点
+      - 📶 流量节点
       - 🇭🇰 香港节点
-      - 🇨🇳 台湾节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 新加坡节点
+      - 🇮🇳 印度节点
+      - 🇬🇧 英国节点
+      - 🇦🇷 阿根廷节点
+      - 🇹🇷 土耳其节点
+      - 🇫🇷 法国节点
+      - 🇩🇪 德国节点
+      - 🇨🇦 加拿大节点
+      - 🇵🇭 菲律宾节点
+      - 🇦🇺 澳大利亚节点
+      - 🇲🇴 澳门节点
       - 🇰🇷 韩国节点
+      - 🇺🇦 乌克兰节点
+      - 🇻🇳 越南节点
+      - 🇷🇺 俄罗斯节点
+      - 🇹🇭 泰国节点
+      - 🇲🇾 马来西亚节点
+      - 🇳🇴 挪威节点
+      - 🇮🇩 印度尼西亚节点
+      - 🇳🇬 尼日利亚节点
+      - 🇧🇷 巴西节点
+      - DIRECT
+
+  - name: 🎥 奈飞视频
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 😀 自建节点
+      - ⚡ 多倍节点
       - 🚀 手动切换
+      - ♻️ 自动选择单倍最快节点
+      - 📶 流量节点
+      - 🇭🇰 香港节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 新加坡节点
+      - 🇮🇳 印度节点
+      - 🇬🇧 英国节点
+      - 🇦🇷 阿根廷节点
+      - 🇹🇷 土耳其节点
+      - 🇫🇷 法国节点
+      - 🇩🇪 德国节点
+      - 🇨🇦 加拿大节点
+      - 🇵🇭 菲律宾节点
+      - 🇦🇺 澳大利亚节点
+      - 🇲🇴 澳门节点
+      - 🇰🇷 韩国节点
+      - 🇺🇦 乌克兰节点
+      - 🇻🇳 越南节点
+      - 🇷🇺 俄罗斯节点
+      - 🇹🇭 泰国节点
+      - 🇲🇾 马来西亚节点
+      - 🇳🇴 挪威节点
+      - 🇮🇩 印度尼西亚节点
+      - 🇳🇬 尼日利亚节点
+      - 🇧🇷 巴西节点
       - DIRECT
 
   - name: 📺 巴哈姆特
     type: select
     proxies:
       - 🇨🇳 台湾节点
+      - 🇭🇰 香港节点
+      - 🇲🇴 澳门节点
       - 🚀 节点选择
       - 🚀 手动切换
+      - ⚡ 多倍节点
+      - 📶 流量节点
+      - 😀 自建节点
       - DIRECT
+
   - name: 📺 哔哩哔哩
     type: select
     proxies:
       - 🎯 全球直连
       - 🇨🇳 台湾节点
       - 🇭🇰 香港节点
+      - 🇲🇴 澳门节点
+
   - name: 🌍 国外媒体
     type: select
     proxies:
       - 🚀 节点选择
-      - ♻️ 自动选择单倍节点
+      - 😀 自建节点
+      - ⚡ 多倍节点
+      - 🚀 手动切换
+      - ♻️ 自动选择单倍最快节点
+      - 📶 流量节点
       - 🇭🇰 香港节点
-      - 🇨🇳 台湾节点
-      - 🇸🇬 新加坡节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 新加坡节点
+      - 🇮🇳 印度节点
+      - 🇬🇧 英国节点
+      - 🇦🇷 阿根廷节点
+      - 🇹🇷 土耳其节点
+      - 🇫🇷 法国节点
+      - 🇩🇪 德国节点
+      - 🇨🇦 加拿大节点
+      - 🇵🇭 菲律宾节点
+      - 🇦🇺 澳大利亚节点
+      - 🇲🇴 澳门节点
       - 🇰🇷 韩国节点
-      - 🚀 手动切换
+      - 🇺🇦 乌克兰节点
+      - 🇻🇳 越南节点
+      - 🇷🇺 俄罗斯节点
+      - 🇹🇭 泰国节点
+      - 🇲🇾 马来西亚节点
+      - 🇳🇴 挪威节点
+      - 🇮🇩 印度尼西亚节点
+      - 🇳🇬 尼日利亚节点
+      - 🇧🇷 巴西节点
       - DIRECT
+
   - name: 🌏 国内媒体
     type: select
     proxies:
       - DIRECT
-      - 🇭🇰 香港节点
-      - 🇨🇳 台湾节点
-      - 🇸🇬 新加坡节点
-      - 🇯🇵 日本节点
-      - 🚀 手动切换
-  - name: 📢 谷歌FCM
-    type: select
-    proxies:
-      - DIRECT
       - 🚀 节点选择
-      - 🇺🇲 美国节点
+      - 😀 自建节点
+      - ⚡ 多倍节点
+      - 🚀 手动切换
+      - ♻️ 自动选择单倍最快节点
+      - 📶 流量节点
       - 🇭🇰 香港节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
       - 🇨🇳 台湾节点
       - 🇸🇬 新加坡节点
-      - 🇯🇵 日本节点
+      - 🇮🇳 印度节点
+      - 🇬🇧 英国节点
+      - 🇦🇷 阿根廷节点
+      - 🇹🇷 土耳其节点
+      - 🇫🇷 法国节点
+      - 🇩🇪 德国节点
+      - 🇨🇦 加拿大节点
+      - 🇵🇭 菲律宾节点
+      - 🇦🇺 澳大利亚节点
+      - 🇲🇴 澳门节点
       - 🇰🇷 韩国节点
-      - 🚀 手动切换
+      - 🇺🇦 乌克兰节点
+      - 🇻🇳 越南节点
+      - 🇷🇺 俄罗斯节点
+      - 🇹🇭 泰国节点
+      - 🇲🇾 马来西亚节点
+      - 🇳🇴 挪威节点
+      - 🇮🇩 印度尼西亚节点
+      - 🇳🇬 尼日利亚节点
+      - 🇧🇷 巴西节点
 
   - name: 🎮 游戏平台
     type: select
     proxies:
       - DIRECT
       - 🚀 节点选择
-      - 🇺🇲 美国节点
+      - 😀 自建节点
+      - ⚡ 多倍节点
+      - 🚀 手动切换
+      - ♻️ 自动选择单倍最快节点
+      - 📶 流量节点
       - 🇭🇰 香港节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
       - 🇨🇳 台湾节点
       - 🇸🇬 新加坡节点
-      - 🇯🇵 日本节点
+      - 🇮🇳 印度节点
+      - 🇬🇧 英国节点
+      - 🇦🇷 阿根廷节点
+      - 🇹🇷 土耳其节点
+      - 🇫🇷 法国节点
+      - 🇩🇪 德国节点
+      - 🇨🇦 加拿大节点
+      - 🇵🇭 菲律宾节点
+      - 🇦🇺 澳大利亚节点
+      - 🇲🇴 澳门节点
       - 🇰🇷 韩国节点
-      - 🚀 手动切换
+      - 🇺🇦 乌克兰节点
+      - 🇻🇳 越南节点
+      - 🇷🇺 俄罗斯节点
+      - 🇹🇭 泰国节点
+      - 🇲🇾 马来西亚节点
+      - 🇳🇴 挪威节点
+      - 🇮🇩 印度尼西亚节点
+      - 🇳🇬 尼日利亚节点
+      - 🇧🇷 巴西节点
+
   - name: 🎶 网易音乐
     type: select
     include-all: true
-    filter: (?i)网易|音乐|NetEase|Music
+    filter: '(网易|音乐|解锁|Music|NetEase)'
     proxies:
       - DIRECT
       - 🚀 节点选择
-      - ♻️ 自动选择单倍节点
+      - ♻️ 自动选择单倍最快节点
+
   - name: 🎯 全球直连
     type: select
     proxies:
       - DIRECT
       - 🚀 节点选择
-      - ♻️ 自动选择单倍节点
+      - ♻️ 自动选择单倍最快节点
+
   - name: 🛑 广告拦截
     type: select
     proxies:
       - REJECT
       - DIRECT
+
   - name: 🍃 应用净化
     type: select
     proxies:
       - REJECT
       - DIRECT
+
   - name: 🐟 漏网之鱼
     type: select
     proxies:
       - 🚀 节点选择
-      - ♻️ 自动选择单倍节点
-      - DIRECT
+      - 😀 自建节点
+      - ⚡ 多倍节点
+      - 🚀 手动切换
+      - ♻️ 自动选择单倍最快节点
+      - 📶 流量节点
       - 🇭🇰 香港节点
-      - 🇨🇳 台湾节点
-      - 🇸🇬 新加坡节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 新加坡节点
+      - 🇮🇳 印度节点
+      - 🇬🇧 英国节点
+      - 🇦🇷 阿根廷节点
+      - 🇹🇷 土耳其节点
+      - 🇫🇷 法国节点
+      - 🇩🇪 德国节点
+      - 🇨🇦 加拿大节点
+      - 🇵🇭 菲律宾节点
+      - 🇦🇺 澳大利亚节点
+      - 🇲🇴 澳门节点
       - 🇰🇷 韩国节点
-      - 🚀 手动切换
-
-
+      - 🇺🇦 乌克兰节点
+      - 🇻🇳 越南节点
+      - 🇷🇺 俄罗斯节点
+      - 🇹🇭 泰国节点
+      - 🇲🇾 马来西亚节点
+      - 🇳🇴 挪威节点
+      - 🇮🇩 印度尼西亚节点
+      - 🇳🇬 尼日利亚节点
+      - 🇧🇷 巴西节点
+      - DIRECT
 
 rule-providers:
   custom_direct:
     url: https://raw.githubusercontent.com/cutelad1998/sub/main/mysub/custom_direct.list
     path: ./ruleset/custom_direct.list
-    behavior: classical
-    interval: 86400
-    format: text
-    type: http
-  Surrey:
-    url: https://raw.githubusercontent.com/cutelad1998/sub/main/mysub/Surrey.list
-    path: ./ruleset/Surrey.list
     behavior: classical
     interval: 86400
     format: text
@@ -854,13 +1131,6 @@ rule-providers:
   BanProgramAD:
     url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/BanProgramAD.list
     path: ./ruleset/BanProgramAD.list
-    behavior: classical
-    interval: 86400
-    format: text
-    type: http
-  GoogleFCM:
-    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/GoogleFCM.list
-    path: ./ruleset/GoogleFCM.list
     behavior: classical
     interval: 86400
     format: text
@@ -928,9 +1198,9 @@ rule-providers:
     interval: 86400
     format: text
     type: http
-  Gemini:
-    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/Gemini.list
-    path: ./ruleset/Gemini.list
+  grok:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/mysub/grok.list
+    path: ./ruleset/grok.list
     behavior: classical
     interval: 86400
     format: text
@@ -942,9 +1212,30 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+  Gemini:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/Gemini.list
+    path: ./ruleset/Gemini.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
   AI:
     url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/AI.list
     path: ./ruleset/AI.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  GoogleFCM:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/GoogleFCM.list
+    path: ./ruleset/GoogleFCM.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Google:
+    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/Google.list
+    path: ./ruleset/Google.list
     behavior: classical
     interval: 86400
     format: text
@@ -956,7 +1247,6 @@ rule-providers:
     interval: 86400
     format: text
     type: http
-    
   Baidu:
     url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/Baidu.list
     path: ./ruleset/Baidu.list
@@ -1034,13 +1324,6 @@ rule-providers:
     interval: 86400
     format: text
     type: http
-  Google:
-    url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/Google.list
-    path: ./ruleset/Google.list
-    behavior: classical
-    interval: 86400
-    format: text
-    type: http
   JetBrains:
     url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/JetBrains.list
     path: ./ruleset/JetBrains.list
@@ -1048,7 +1331,6 @@ rule-providers:
     interval: 86400
     format: text
     type: http
-
   NetEaseMusic:
     url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/NetEaseMusic.list
     path: ./ruleset/NetEaseMusic.list
@@ -1150,14 +1432,14 @@ rule-providers:
   ChinaDomain:
     url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/ChinaDomain.list
     path: ./ruleset/ChinaDomain.list
-    behavior: domain
+    behavior: classical
     interval: 86400
     format: text
     type: http
   ChinaCompanyIp:
     url: https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/ChinaCompanyIp.list
     path: ./ruleset/ChinaCompanyIp.list
-    behavior: ipcidr
+    behavior: classical
     interval: 86400
     format: text
     type: http
@@ -1171,26 +1453,28 @@ rule-providers:
 
 rules:
   - "RULE-SET,custom_direct,🎯 全球直连"
-  - "RULE-SET,Surrey,💬 Surrey" # New
   - "RULE-SET,custom_proxy,🚀 节点选择"
   - "RULE-SET,LocalAreaNetwork,🎯 全球直连"
   - "RULE-SET,UnBan,🎯 全球直连"
+  # "RULE-SET,https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/Ruleset/MIUIPrivacy.list,🛑 广告拦截"
   - "RULE-SET,BanAD,🛑 广告拦截"
   - "RULE-SET,BanProgramAD,🍃 应用净化"
-  - "RULE-SET,GoogleFCM,📢 谷歌FCM"
   - "RULE-SET,GoogleCN,🎯 全球直连"
   - "RULE-SET,SteamCN,🎯 全球直连"
-  - "RULE-SET,Bing,Ⓜ️ 微软Bing"
-  - "RULE-SET,OneDrive,Ⓜ️ 微软云盘"
+  - "RULE-SET,Bing,Ⓜ️ 微软服务"
+  - "RULE-SET,OneDrive,Ⓜ️ 微软服务"
   - "RULE-SET,Microsoft,Ⓜ️ 微软服务"
   - "RULE-SET,Apple,🍎 苹果服务"
   - "RULE-SET,Telegram,📲 电报消息"
   - "RULE-SET,OpenAi,💬 OpenAi"
   # New
   - "RULE-SET,Claude,💬 Claude"
-  - "RULE-SET,Gemini,💬 Gemini"
-  - "RULE-SET,Twitter,💬 Grok（X）"
-  - "RULE-SET,AI,💬 国外AI工具"
+  - "RULE-SET,grok,💬 Grok（X，twitter）" # New
+  - "RULE-SET,Twitter,💬 Grok（X，twitter）"
+  - "RULE-SET,Gemini,💬 Gemini（不含Google）"
+  - "RULE-SET,AI,💬 国外AI（兜底）"
+  - "RULE-SET,GoogleFCM,📢 谷歌FCM"
+  - "RULE-SET,Google,📢 谷歌FCM"
   - "RULE-SET,Alibaba,🎯 全球直连"
   - "RULE-SET,Baidu,🎯 全球直连"
   - "RULE-SET,JD,🎯 全球直连"
@@ -1220,8 +1504,10 @@ rules:
   - "RULE-SET,ChinaMedia,🌏 国内媒体"
   - "RULE-SET,ProxyMedia,🌍 国外媒体"
   - "RULE-SET,ProxyGFWlist,🚀 节点选择"
+  # "RULE-SET,https://raw.githubusercontent.com/cutelad1998/sub/main/ACL4SSR/Clash/ChinaIp.list,🎯 全球直连"
   - "RULE-SET,ChinaDomain,🎯 全球直连"
   - "RULE-SET,ChinaCompanyIp,🎯 全球直连"
   - "RULE-SET,Download,🎯 全球直连"
+  # "GEOIP,LAN,🎯 全球直连"
   - "GEOIP,CN,🎯 全球直连"
   - "MATCH,🐟 漏网之鱼"
